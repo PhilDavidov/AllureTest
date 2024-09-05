@@ -55,7 +55,8 @@ jobs:
       uses: allure-framework/setup-allurectl@v1
     - name: Testing
       run: |
-        allurectl watch -- python -m pytest tests
+        python -m pytest tests
+        allurectl upload --launch-name "CI test" D:\a\AllureTest\AllureTest\build\allure-results
 
   build-linux:
     runs-on: ubuntu-latest
@@ -74,8 +75,9 @@ jobs:
       uses: allure-framework/setup-allurectl@v1
     - name: Testing
       run: |
-        allurectl watch -- python -m pytest --cov=fastvector tests
+        python -m pytest --cov=fastvector tests
         python -m codecov
+        allurectl upload --launch-name "CI test" /home/runner/work/AllureTest/AllureTest/build/allure-results
 
   build-macos:
     runs-on: macos-latest
@@ -94,5 +96,6 @@ jobs:
       uses: allure-framework/setup-allurectl@v1
     - name: Testing
       run: |
-        allurectl watch -- python -m pytest tests
+        python -m pytest tests
+        allurectl upload --launch-name "CI test" /Users/runner/work/AllureTest/AllureTest/build/allure-results
         
