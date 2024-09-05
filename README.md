@@ -8,6 +8,7 @@
 
 ## Template For Python Projects
 ## Hyu
+## Hyu 2
 
 This is a template for Python projects. What you get:
 
